@@ -8,9 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
 
@@ -35,7 +33,7 @@ public class Contact {
 	@OneToMany(mappedBy = "contact", cascade = CascadeType.ALL)
 	private List<Phone> phones;
 	
-	@OneToOne(mappedBy = "contact", cascade = CascadeType.ALL) 
-	private Suggestion suggestion;
+	@OneToMany(mappedBy = "contact", cascade = CascadeType.ALL) 
+	private List<Suggestion> suggestions;
 	
 }
