@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<!-- O Thymeleaf não entende tags sem fechamento, por isso feche-as -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="../static/styles/style.css"/>
+<title>Caixa de sugestão</title>
+</head>
+<body>
+	<header class="content">
+		<ul>
+			<li><a href="#">Caixa de Sugestões</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/new">Deixar Sugestão</a></li>
+		</ul>
+	</header>
+	<section class="content">
+		<div class="banner">
+			<img src="/img/icon_style_3.svg" alt="style3"/>
+			<!-- <h1>STYLE3</h1> -->
+			<h3>Plataforma de contribuição</h3>
+		</div>
+
+		<form action="/new" method="get">
+			<h1 class="contribuitions">Contribuições Recentes</h1>
+			<div class="table">
+				<ul>
+					<li th:each="l : ${listSuggestion}">
+						<h3 id="name" th:text="${l.contact.name}"><img src="/src/main/resources/static/img/icon_suggestion.svg"/>Name</h3>
+						<p id="textSuggestion" th:text="${l.textSuggestion}">text suggestion</p>
+						<p id="date" th:text="${#dates.format(l.creatDate, 'dd-MM-yyyy')}">Date</p>
+					</li>
+				</ul>
+			</div>
+		</form>
+
+	</section>
+</body>
+</html>

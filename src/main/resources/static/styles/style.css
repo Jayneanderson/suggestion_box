@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --blue:#1565C0;
+}
+html, body {
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+/* :root{
+    --editBorder: 1px solid red;
+} */
+
+header{
+    max-width: 1366px;
+    height: 100px;
+    background-color: #1976D2;/* 6x3 */
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 10px 10px; /* top-lef, top-right, bottom-left, bottom-right */
+}
+
+header ul{
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    background-color: #1565C0; 
+    border-radius: 20px;
+}
+
+header ul li {
+    margin: 0 20px;
+    max-height: 100%;
+    font-size: 20px;
+    font-weight: 400px;
+}
+
+header ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+header ul li:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0;
+    height: 100%;
+    font-size: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+header ul li:first-child a {
+    padding: 0 30px;
+    color: #1565C0;
+}
+.content{
+    width: 100%;
+    margin: 0 auto;
+}
+ 
+section.content{
+    max-width: 1200px; 
+}
+
+section .banner {
+    margin: 50px 0;     
+    text-align: center;
+}
+
+section .banner img{
+    width: 100px;
+    height: 100px;
+}
+section .banner h1{
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: var(--blue);
+}
+
+section .banner h3{
+    font-size: 25px;
+    color: var(--blue);
+}
+
+/* estilizando lista de suggestions */
+
+.contribuitions{
+    padding: 20px 0;
+    color: var(--blue);
+}
+
+
+div.table {
+    border-radius: 5px;
+    width: 100%;
+    /*box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);*/
+   
+}
+div.table ul{
+	list-style-type: none;
+}
+
+div.table ul li{
+	margin: 7px 0px;
+	padding: 10px 10px;
+	background-color: #fff;
+	border-radius: 5px;
+    box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.1);/*Faz parecer que a tag está flutuando. O 1º valor é um deslocamento do eixo x, o 2º o deslocamento do eixo y. O 3º é enquanto quer esfumaçar. O 4º é a dimensão da sombra da caixa. A última é a cor  */
+}/
+
+div.table ul li h3#name {
+	color: #212121;
+}
+div.table ul li:hover {
+	background-color: var(--blue);
+	transition: 0.2s ease;
+}
+
+div.table ul li:hover p, 
+div.table ul li:hover h3{
+	color: #fff;
+}
+
+
+div.table ul li p{
+	padding: 8px 0;
+}
+
+
+div.table ul li #textSuggestion{
+	text-align: center;
+}
+div.table ul li #date{
+	text-align: end;
+}
+
+/* estilizando view de cadastro a apartir daqui*/
+div.form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+div.suggestion{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.suggestion input, textarea{
+    border-radius: 5px;
+    border: 1px solid gray; 
+    resize: none;
+    padding-left: 7px;
+}
+
+div.suggestion textarea {
+	padding-top: 5px;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 15px;
+	
+}
+div.suggestion input {
+    height: 40px;
+}
+
+div.suggestion label {
+    padding: 10px 0;
+    text-align: start;
+}
+
+div.suggestion #button {
+	margin: 20px 0;
+	height: 40px;
+}
+
+div.suggestion #button {
+	border-radius: 5px;
+    border: 1px solid gray; 
+    background-color: #fff;
+    font-size: 15px;
+	
+}
