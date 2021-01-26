@@ -12,6 +12,15 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Range;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Contact {
 	
 	@Id
@@ -20,7 +29,7 @@ public class Contact {
 	private Long id;
 	
 	@NotBlank
-	@Size(min = 2, max = 40, message = "O nome deve ter no mínimo duas letras")
+	@Range(min = 3, max = 40, message = "O nome deve ter no mínimo duas letras")
 	private String name;
 	
 	@OneToMany(mappedBy = "contact", cascade = CascadeType.ALL)
@@ -29,7 +38,4 @@ public class Contact {
 	@OneToOne(mappedBy = "contact", cascade = CascadeType.ALL) 
 	private Suggestion suggestion;
 	
-	public Contact() {
-		super();
-	}
 }

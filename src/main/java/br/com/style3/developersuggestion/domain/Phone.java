@@ -9,7 +9,14 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Phone {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,8 +24,7 @@ public class Phone {
 	private Long id;
 	
 	@NotBlank
-	@Size(min = 3, max = 11)
-	@Column(name = "number")
+	@Size(min = 9, max = 13)
 	private String number;
 	
 	//muitos telefones para um contato
@@ -26,8 +32,4 @@ public class Phone {
 	@JoinColumn(name = "idcontact")
 	private Contact contact;
 	
-	public Phone() {
-		super();
-	}
-
 }
